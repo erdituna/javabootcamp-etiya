@@ -27,10 +27,7 @@ public class MyList {
 	}
 
 	public void remove(int index) {
-		String[] tempCities = new String[array.length];
-		for (int i = 0; i < tempCities.length; i++) {
-			tempCities[i] = array[i];
-		}
+		String[] tempCities = array;
 		array = new String[tempCities.length - 1];
 		int counter = 0;
 		for (int i = 0; i < array.length + 1; i++) {
@@ -45,12 +42,8 @@ public class MyList {
 	}
 
 	public void remove(String cities) {
-		String[] temp = new String[array.length];
+		String[] temp = array;
 		int counter = 0;
-		for (int i = 0; i < temp.length; i++) {
-			temp[i] = array[i];
-		}
-		
 		for (int i = 0; i < temp.length; i++) {
 			if (temp[i] == cities)
 				counter++;
@@ -58,7 +51,6 @@ public class MyList {
 		
 		int resultIndex = 0;
 		array = new String[temp.length - counter];
-		
 		for (int i = 0; i < temp.length; i++) {
 			if (temp[i] != cities) {
 				array[resultIndex] = temp[i];
@@ -66,7 +58,6 @@ public class MyList {
 			} else {
 				continue;
 			}
-
 		}
 	}
 
